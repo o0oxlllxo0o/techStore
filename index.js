@@ -7,18 +7,15 @@ app.use(express.urlencoded({ extended: true }))
 
 app.set('view engine', 'pug')
 
-
-
 var routerTrangtru=require('./router/routerTrangtru.js')
+var routerDienthoai=require('./router/routerDienthoai.js')
+var routerLaptop=require('./router/routerLaptop.js')
+var routerThongtin=require('./router/routerThongtin.js')
+var routerGiohang=require('./router/routerGiohang.js')
+
 app.use('/',routerTrangtru)
-app.get('/laptop',async (req,res)=>{
-	let data=await database.laptop()
-	res.json(data)
-})
-app.get('/dienthoai',async (req,res)=>{
-	let data=await database.dienthoai()
-	res.json(data)
-})
+app.use('/laptop',routerLaptop)
+app.use('/dienthoai',routerDienthoai)
 
 app.listen(port,()=>{
 	console.log(`Ket noi thanh cong den cong ${port}`)
