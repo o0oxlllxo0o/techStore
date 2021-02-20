@@ -6,8 +6,8 @@ var connection = mysql.createConnection({
   database: 'thietbi'
 })
 
-module.exports.trangtru= function(){
-	connection.connect()
+module.exports.trangchu= function(){
+
 
 	return new Promise((res,rej)=>{
 		connection.query('SELECT * from sanpham where id <=10',
@@ -17,10 +17,9 @@ module.exports.trangtru= function(){
   		rej(err)
 		})
 	})
-connection.end()
+
 }
 module.exports.laptop= function(){
-	connection.connect()
 
 	return new Promise((res,rej)=>{
 		connection.query('SELECT * from sanpham where idsanpham =2',
@@ -30,10 +29,10 @@ module.exports.laptop= function(){
   		rej(err)
 		})
 	})
-connection.end()
+
 }
 module.exports.dienthoai= function(){
-	connection.connect()
+	
 
 	return new Promise((res,rej)=>{
 		connection.query('SELECT * from sanpham where idsanpham =1',
@@ -43,5 +42,5 @@ module.exports.dienthoai= function(){
   		rej(err)
 		})
 	})
-connection.end()
+
 }
