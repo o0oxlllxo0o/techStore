@@ -10,7 +10,47 @@ module.exports.trangtru= function(){
 	connection.connect()
 
 	return new Promise((res,rej)=>{
-		connection.query('SELECT * from sanpham', function (err, rows, fields) {
+		connection.query('SELECT * from sanpham where id <=10',
+		 function (err, rows, fields) {
+  		if(err) throw err
+  		res(rows)
+  		rej(err)
+		})
+	})
+connection.end()
+}
+module.exports.laptop= function(){
+	connection.connect()
+
+	return new Promise((res,rej)=>{
+		connection.query('SELECT * from sanpham where idsanpham =2',
+		 function (err, rows, fields) {
+  		if(err) throw err
+  		res(rows)
+  		rej(err)
+		})
+	})
+connection.end()
+}
+module.exports.trangtru= function(){
+	connection.connect()
+
+	return new Promise((res,rej)=>{
+		connection.query('SELECT * from sanpham where id <=10',
+		 function (err, rows, fields) {
+  		if(err) throw err
+  		res(rows)
+  		rej(err)
+		})
+	})
+connection.end()
+}
+module.exports.trangtru= function(){
+	connection.connect()
+
+	return new Promise((res,rej)=>{
+		connection.query('SELECT * from sanpham where id <=10',
+		 function (err, rows, fields) {
   		if(err) throw err
   		res(rows)
   		rej(err)
