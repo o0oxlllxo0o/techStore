@@ -32,11 +32,11 @@ module.exports.laptop= function(){
 	})
 connection.end()
 }
-module.exports.trangtru= function(){
+module.exports.dienthoai= function(){
 	connection.connect()
 
 	return new Promise((res,rej)=>{
-		connection.query('SELECT * from sanpham where id <=10',
+		connection.query('SELECT * from sanpham where idsanpham =1',
 		 function (err, rows, fields) {
   		if(err) throw err
   		res(rows)
