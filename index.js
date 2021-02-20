@@ -12,11 +12,11 @@ var routerDienthoai=require('./router/routerDienthoai.js')
 var routerLaptop=require('./router/routerLaptop.js')
 var routerThongtin=require('./router/routerThongtin.js')
 var routerGiohang=require('./router/routerGiohang.js')
-
 app.use('/',routerTrangtru)
 app.use('/laptop',routerLaptop)
 app.use('/dienthoai',routerDienthoai)
-
+app.use('/thongtin',routerThongtin)
+app.use('/giohang',routerGiohang)
 app.listen(port,()=>{
 	console.log(`Ket noi thanh cong den cong ${port}`)
 })
