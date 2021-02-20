@@ -1,11 +1,9 @@
 const express = require('express')
 const app = express()
 const router = express.Router()
-const database=require('../model/database.js')
+var controlLaptop=require('../control/controlLaptop.js')
 
-router.get('/',async (req,res)=>{
-	let data=await database.laptop()
-	res.json(data)
-})
+
+router.get('/',controlLaptop.laptop)
 
 module.exports=router

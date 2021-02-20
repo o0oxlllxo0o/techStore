@@ -1,9 +1,7 @@
 const express = require('express')
 const app = express()
 const router = express.Router()
-
-router.get('/',(req,res)=>{
-	res.render('giohang')
-})
+var controlGiohang=require('../control/controlGiohang.js')
+router.get('/',controlGiohang.giohang)
 
 module.exports=router

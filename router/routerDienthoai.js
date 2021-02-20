@@ -1,11 +1,9 @@
 const express = require('express')
 const app = express()
 const router = express.Router()
-const database=require('../model/database.js')
+var controlDienthoai=require('../control/controlDienthoai.js')
 
-router.get('/',async (req,res)=>{
-	let data=await database.dienthoai()
-	res.json(data)
-})
+
+router.get('/',controlDienthoai.dienthoai)
 
 module.exports=router

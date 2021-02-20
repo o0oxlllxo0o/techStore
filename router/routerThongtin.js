@@ -1,9 +1,7 @@
 const express = require('express')
 const app = express()
 const router = express.Router()
-
-router.get('/', (req,res)=>{
-	res.render('thongtin')
-})
+var controlThongtin=require('../control/controlThongtin.js')
+router.get('/',controlThongtin.thongtin)
 
 module.exports=router
