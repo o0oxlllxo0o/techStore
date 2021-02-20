@@ -7,13 +7,10 @@ app.use(express.urlencoded({ extended: true }))
 
 app.set('view engine', 'pug')
 
-const database=require('./model/database.js')
 
 
-app.get('/',async (req,res)=>{
-	let data=await database.trangtru()
-	res.json(data)
-})
+var routerTrangtru=require('./router/routerTrangtru.js')
+app.use('/',routerTrangtru)
 app.get('/laptop',async (req,res)=>{
 	let data=await database.laptop()
 	res.json(data)
