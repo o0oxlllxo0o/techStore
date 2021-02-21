@@ -6,5 +6,6 @@ var controlLaptop=require('../control/controlLaptop.js')
 
 
 router.get('/',controlLaptop.laptop)
+router.get('/:id',controlLaptop.showInf)
 
 module.exports=router

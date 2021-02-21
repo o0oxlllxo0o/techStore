@@ -5,5 +5,5 @@ var controlDienthoai=require('../control/controlDienthoai.js')
 
 
 router.get('/',controlDienthoai.dienthoai)
-
+router.get('/:id',controlDienthoai.showInf)
 module.exports=router
