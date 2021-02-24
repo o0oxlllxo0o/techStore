@@ -1,3 +1,15 @@
 extends template
+block javascript
 block content
-	h1 #{data.tensanpham}
+  .container.mt-5
+    .row
+      .col-md.m-3
+        img.img-thumbnail(src= data.hinhanhsanpham, alt='ERR') 
+
+      .col-md.m-3
+        h1#tensanpham #{data.tensanpham}
+        p #{data.motasanpham}
+        .container.mt-3
+          a#submit1.btn.btn-outline-primary.float-end(type='button' href='/giohang') Thêm và giỏ hàng  
+          h5.p-2 Giá sản phẩm: #{data.giacv} đ       
+  script(src='../js/themvaogio.js')

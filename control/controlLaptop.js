@@ -5,12 +5,17 @@ const convertNumber=require('../method/convertNumber.js')
 module.exports.laptop=async function(req,res){
 	let data1=await database.laptop()
 	let data=data1.map(function(x){
-	x.giasanpham=convertNumber(x.giasanpham)
+	x.giacv=convertNumber(x.giasanpham)
 	return x
 })
 	res.render('laptop',{data})
 
 }
-module.exports.showInf=function(req,res){
-	res.send(req.params)
+module.exports.showInf=async function(req,res){
+	let data1=await database.laptop()
+	let data=data1.find(function(x){
+		x.giacv=convertNumber(x.giasanpham)
+		return x.id==req.params.id
+	})
+	res.render('showSp',{data:data})
 }

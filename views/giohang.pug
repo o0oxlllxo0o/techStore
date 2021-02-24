@@ -1,3 +1,14 @@
 extends template.pug
+block javascript
+	
 block content
-	h1 Day la gio hang
+    table.table.table-striped
+      thead
+        tr
+          th(scope='col') #
+          th(scope='col') Tên 
+          th(scope='col') Giá 
+          th(scope='col') Handle
+      tbody#ds
+    script(src='../js/themvaogio.js')   
+     

@@ -4,6 +4,8 @@ const router = express.Router()
 var controlDienthoai=require('../control/controlDienthoai.js')
 
 
-router.get('/',controlDienthoai.dienthoai)
-router.get('/:id',controlDienthoai.showInf)
+var checkCookieDS=require('../midelware/themDsCookie.js')
+
+router.get('/',checkCookieDS,controlDienthoai.dienthoai)
+router.get('/:id',checkCookieDS,controlDienthoai.showInf)
 module.exports=router
