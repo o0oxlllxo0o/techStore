@@ -4,6 +4,7 @@ const router = express.Router()
 var controlGiohang=require('../control/controlGiohang.js')
 var checkCookieDS=require('../midelware/themDsCookie.js')
 router.get('/',checkCookieDS,controlGiohang.giohang)
+router.post('/',controlGiohang.muahang)
 
 
 module.exports=router

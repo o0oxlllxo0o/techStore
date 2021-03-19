@@ -1,7 +1,8 @@
 extends template.pug
 block content
-  each val in data
-    .card.float-start.m-3(style='width: 18rem;')
+ 
+   each val in data
+    .card.float-start.m-4(style='width: 18rem;')
       img.card-img-top(src=val.hinhanhsanpham, alt='err', style='width:15rem; height:15rem')
       .card-body
         h5.card-title= val.tensanpham

@@ -6,7 +6,7 @@ module.exports= async function(req,res){
 	let dataFind=data.filter(function(x){
 		return x.tensanpham.toUpperCase().indexOf(q)>-1
 	}).map(function(x){
-		x.giasanpham=convertNumber(x.giasanpham)
+		x.giacv=convertNumber(x.giasanpham)
 		return x
 	})
 

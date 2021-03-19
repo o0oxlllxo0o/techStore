@@ -3,7 +3,7 @@ module.exports= function(Number){
     let count=0
     let number=parseInt(Number)
     while(number>=1){
-      if(count==2){
+      if(count==2&&number>10){
         count=0
         result='.'+number%10+ result
       }

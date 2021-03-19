@@ -1,0 +1,27 @@
+extends template
+block content
+      .container
+        if complete
+          #success.alert.alert-warning.text-content.visually-hidden(role="alert")= complete
+        .row
+          .col-sm-2
+          .col-sm.mt-5
+            form.p-5.border.border-2.rounded-3(method='post')
+              .row-md.m-2
+                label.form-label(for='exampleInputEmail1'  ) Email address
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder="test@gmail.com" name="email"  required)
+                #emailHelp.form-text Chúng tôi sẽ không bao giờ chia sẻ email, sđt hay bất cứ thông tin cá nhân nào cho người khác
+              .row-md.m-2
+                label.form-label(for='validationCustom01') Họ và tên
+                input#validationCustom01.form-control(type='text', name="tenKh" required, placeholder="Nguyen Van A" )
+              .row-md.m-2
+                label.form-label(for='validationCustom02') Số điện thoại
+                input#validationCustom02.form-control(type='text',onkeypress="return event.charCode >= 48 && event.charCode <= 57",name="sdt" required)
+                if err    
+                  .alert.alert-danger.text-center.mt-2(role="alert")= err.phone
+              .mb-3.form-check.m-2
+                input#exampleCheck1.form-check-input(type='checkbox' name="Remember" value="yes")
+                label.form-check-label(for='exampleCheck1') Remember me
+              button#submit.btn.btn-primary(type='submit') Submit
+          .col-sm-2
+      script(src='../js/thanhtoan.js')

@@ -1,14 +1,41 @@
 extends template.pug
 block javascript
-	
+
 block content
-    table.table.table-striped
-      thead
+  table.table.table-striped
+    thead
         tr
-          th(scope='col') #
+          th.text-center(scope='col') #
           th(scope='col') Tên 
           th(scope='col') Giá 
-          th(scope='col') Handle
-      tbody#ds
-    script(src='../js/themvaogio.js')   
+          th.text-center(scope='col') Số lượng
+          th.col-3(scope='col') 
+    tbody#ds
+      - var i = 1;
+        each val in data
+         tr.sp
+          th.pt-3.text-center.stt(scope='row')= i++
+          td.pt-3.tenSP= val.tensanpham
+          td.pt-3.giaSP= val.giacv +' đ'
+          td
+            .container
+              .row
+                .col-5.text-end.px-1
+                   button.btn.btn-outline-secondary.px-3.giamSL(type='button') - 
+                .col-2.px-1
+                   input.form-control.text-center.SL(type='text', placeholder='1', aria-label='Disabled input example',disabled='')
+                .col-2.text-start.px-1
+                   button.btn.btn-outline-secondary.tangSL(type='button') +   
+          td
+            button.btn.btn-outline-secondary.xoaSP(type='button') Xoá
+        tr
+          th.pt-3.text-center(scope='row') End
+          th.pt-3(scope='row') Số tiền thanh toán:
+          th#tongtien.pt-3(scope='row') 143.000.000 đ
+          th.text-center
+            a#thanhtoan.btn.btn-outline-primary.col-4(type='button' href="/thanhtoan") Thanh toán
+          th 
+
+    script(src='../js/xoaKhoigio.js')
+    script(src='../js/chinhSL.js')   
      

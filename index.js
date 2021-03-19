@@ -15,6 +15,7 @@ var routerLaptop=require('./router/routerLaptop.js')
 var routerThongtin=require('./router/routerThongtin.js')
 var routerGiohang=require('./router/routerGiohang.js')
 var routerSearch=require('./router/routerSearch.js')
+var routerThanhtoan=require('./router/routerThanhtoan.js')
 
 app.use('/',routerTrangchu)
 app.use('/laptop',routerLaptop)
@@ -22,10 +23,8 @@ app.use('/dienthoai',routerDienthoai)
 app.use('/thongtin',routerThongtin)
 app.use('/giohang',routerGiohang)
 app.use('/search',routerSearch)
-app.get('/cookie',function(req,res){
-	res.cookie('test',1234)
-	res.send('hello')
-})
+app.use('/thanhtoan',routerThanhtoan)
+
 app.listen(port,()=>{
 	console.log(`Ket noi thanh cong den cong ${port}`)
 })
